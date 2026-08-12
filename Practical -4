@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StyleHub - Product Showcase</title>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-50 text-gray-800">
+
+<!-- Header -->
+<header class="bg-black text-white">
+    <div class="max-w-6xl mx-auto px-4 py-5
+                flex flex-col sm:flex-row
+                items-center justify-between gap-4">
+
+        <h1 class="text-2xl font-bold text-orange-400">
+            StyleHub
+        </h1>
+
+        <nav class="flex gap-6 text-sm">
+            <a href="#" class="hover:text-orange-400">Home</a>
+            <a href="#" class="hover:text-orange-400">Shop</a>
+            <a href="#" class="hover:text-orange-400">Offers</a>
+            <a href="#" class="hover:text-orange-400">Contact</a>
+        </nav>
+
+    </div>
+</header>
+
+
+<!-- Hero Section -->
+<section class="bg-orange-500 text-white text-center px-4 py-12">
+
+    <p class="uppercase tracking-widest text-orange-100 font-semibold">
+        New Arrivals
+    </p>
+
+    <h2 class="text-4xl md:text-5xl font-bold mt-2 mb-4">
+        Upgrade Your Style
+    </h2>
+
+    <p class="max-w-xl mx-auto text-orange-50">
+        Discover trendy fashion products designed for
+        comfort, style and everyday adventures.
+    </p>
+
+</section>
+
+
+<!-- Products -->
+<main class="max-w-6xl mx-auto px-4 py-12">
+
+    <h2 class="text-3xl font-bold text-center mb-8">
+        Trending Products
+    </h2>
+
+
+    <!-- Flexbox -->
+    <div class="flex flex-col md:flex-row gap-6">
+
+
+        <!-- Shoes -->
+        <div class="bg-white rounded-2xl shadow-md overflow-hidden
+                    flex-1 flex flex-col
+                    hover:shadow-xl transition">
+
+            <img
+                src="https://images.unsplash.com/photo-1542291026-7eec264c27ff"
+                class="w-full h-60 object-cover"
+                alt="Running Shoes">
+
+            <div class="p-5 flex flex-col flex-1">
+
+                <span class="text-sm font-semibold text-orange-500">
+                    FOOTWEAR
+                </span>
+
+                <h3 class="text-xl font-bold mt-1 mb-2">
+                    Sport Running Shoes
+                </h3>
+
+                <p class="text-gray-600 mb-4">
+                    Lightweight and comfortable shoes for
+                    running, gym and everyday activities.
+                </p>
+
+                <div class="mt-auto flex items-center justify-between">
+
+                    <span class="text-xl font-bold text-orange-500">
+                        ₹1,999
+                    </span>
+
+                    <button class="bg-orange-500 text-white
+                                   px-4 py-2 rounded-lg
+                                   hover:bg-orange-600">
+                        Buy Now
+                    </button>
+
+                </div>
+
+            </div>
+        </div>
+
+
+        <!-- Sunglasses -->
+        <div class="bg-white rounded-2xl shadow-md overflow-hidden
+                    flex-1 flex flex-col
+                    hover:shadow-xl transition">
+
+            <img
+                src="https://images.unsplash.com/photo-1511499767150-a48a237f0083"
+                class="w-full h-60 object-cover"
+                alt="Sunglasses">
+
+            <div class="p-5 flex flex-col flex-1">
+
+                <span class="text-sm font-semibold text-orange-500">
+                    ACCESSORIES
+                </span>
+
+                <h3 class="text-xl font-bold mt-1 mb-2">
+                    Classic Sunglasses
+                </h3>
+
+                <p class="text-gray-600 mb-4">
+                    Stylish sunglasses with a modern frame
+                    perfect for outdoor adventures.
+                </p>
+
+                <div class="mt-auto flex items-center justify-between">
+
+                    <span class="text-xl font-bold text-orange-500">
+                        ₹999
+                    </span>
+
+                    <button class="bg-orange-500 text-white
+                                   px-4 py-2 rounded-lg
+                                   hover:bg-orange-600">
+                        Buy Now
+                    </button>
+
+                </div>
+
+            </div>
+        </div>
+
+
+        <!-- Backpack -->
+        <div class="bg-white rounded-2xl shadow-md overflow-hidden
+                    flex-1 flex flex-col
+                    hover:shadow-xl transition">
+
+            <img
+                src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62"
+                class="w-full h-60 object-cover"
+                alt="Travel Backpack">
+
+            <div class="p-5 flex flex-col flex-1">
+
+                <span class="text-sm font-semibold text-orange-500">
+                    TRAVEL
+                </span>
+
+                <h3 class="text-xl font-bold mt-1 mb-2">
+                    Travel Backpack
+                </h3>
+
+                <p class="text-gray-600 mb-4">
+                    Spacious and durable backpack for college,
+                    travel and daily use.
+                </p>
+
+                <div class="mt-auto flex items-center justify-between">
+
+                    <span class="text-xl font-bold text-orange-500">
+                        ₹1,499
+                    </span>
+
+                    <button class="bg-orange-500 text-white
+                                   px-4 py-2 rounded-lg
+                                   hover:bg-orange-600">
+                        Buy Now
+                    </button>
+
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+</main>
+
+
+<!-- Footer -->
+<footer class="bg-black text-white text-center py-6">
+
+    <h3 class="font-bold text-lg text-orange-400">
+        StyleHub
+    </h3>
+
+    <p class="text-gray-400 text-sm mt-2">
+        © 2026 StyleHub. All Rights Reserved.
+    </p>
+
+</footer>
+
+</body>
+</html>
