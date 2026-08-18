@@ -99,9 +99,9 @@
                     transition duration-300">
 
           <img
-            src="https://images.unsplash.com/photo-1563379091339-03246963d96c?auto=format&fit=crop&w=800&q=80"
-            alt="Chicken Biryani"
-            class="w-full h-56 object-cover"
+          src="https://recipebyme.com/assets/images/1754780860605-b80b1ooh.jpg"
+          alt="Chicken Biryani"
+          class="w-full h-56 object-cover"
           >
 
           <div class="p-6">
@@ -263,10 +263,10 @@
                     transition duration-300">
 
           <img
-            src="https://images.unsplash.com/photo-1666190094762-55b08c1f4a23?auto=format&fit=crop&w=800&q=80"
-            alt="Gulab Jamun"
-            class="w-full h-56 object-cover"
-          >
+          src="https://snapcalorie-webflow-website.s3.us-east-2.amazonaws.com/media/food_pics_v2/medium/gulabjamun.jpg"
+          alt="Gulab Jamun"
+          class="w-full h-56 object-cover"
+        >
 
           <div class="p-6">
 
