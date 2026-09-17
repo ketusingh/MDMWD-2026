@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Typing Trainer</title>
+
+  <!-- Tailwind CSS library -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<!-- Main page body -->
+<body class="bg-gray-100 flex justify-center p-6">
+
+<!-- Main typing trainer container -->
+<div class="bg-white p-6 rounded-xl shadow-lg w-full max-w-2xl">
+
+  <!-- Website heading -->
+  <h1 class="text-2xl font-bold text-center text-blue-600 mb-4">
+    Typing Speed & Accuracy Trainer
+  </h1>
+
+  <!-- Paragraph that user has to type -->
+  <p id="text" class="bg-gray-100 p-4 rounded mb-4">
+    Typing is an important skill. Practice regularly to improve your speed
+    and accuracy.
+  </p>
+
+  <!-- Textarea where user types the paragraph -->
+  <textarea id="input" rows="5"
+    placeholder="Start typing here..."
+    class="w-full border p-3 rounded focus:border-blue-500"></textarea>
+
+  <!-- Display typing results -->
+  <div class="grid grid-cols-3 gap-3 mt-4 text-center">
+
+    <!-- Shows Words Per Minute -->
+    <div class="bg-blue-100 p-3 rounded">
+      <b id="wpm">0</b><br>WPM
+    </div>
+
+    <!-- Shows typing accuracy -->
+    <div class="bg-green-100 p-3 rounded">
+      <b id="accuracy">100%</b><br>Accuracy
+    </div>
+
+    <!-- Shows number of errors -->
+    <div class="bg-red-100 p-3 rounded">
+      <b id="errors">0</b><br>Errors
+    </div>
+
+  </div>
+
+  <!-- Button to restart the typing test -->
+  <button onclick="resetTest()"
+    class="w-full bg-blue-600 text-white p-3 rounded mt-4">
+    Restart
+  </button>
+
+</div>
+
+<script>
+
+// Get the paragraph text from HTML
+const text = document.getElementById("text").innerText;
+
+// Get the typing textarea
+const input = document.getElementById("input");
+
+// Variable to store starting time
+let start;
+
+
+// Run this function whenever user types
+input.addEventListener("input", () => {
+
+  // Start timer when typing begins
+  if (!start) start = Date.now();
+
+  // Get typed text and set errors to zero
+  let typed = input.value, errors = 0;
+
+  // Compare typed characters with original paragraph
+  for (let i = 0; i < typed.length; i++)
+    if (typed[i] !== text[i]) errors++;
+
+  // Calculate correct characters
+  let correct = typed.length - errors;
+
+  // Calculate time in minutes
+  let time = (Date.now() - start) / 60000;
+
+  // Calculate typing speed (Words Per Minute)
+  let wpm = time > 0
+    ? Math.round((correct / 5) / time)
+    : 0;
+
+  // Calculate accuracy percentage
+  let accuracy = typed.length
+    ? Math.round((correct / typed.length) * 100)
+    : 100;
+
+  // Display WPM
+  document.getElementById("wpm").innerText = wpm;
+
+  // Display accuracy
+  document.getElementById("accuracy").innerText = accuracy + "%";
+
+  // Display errors
+  document.getElementById("errors").innerText = errors;
+});
+
+
+// Function to restart the test
+function resetTest() {
+
+  // Clear typing area
+  input.value = "";
+
+  // Reset starting time
+  start = null;
+
+  // Reset WPM
+  document.getElementById("wpm").innerText = "0";
+
+  // Reset accuracy
+  document.getElementById("accuracy").innerText = "100%";
+
+  // Reset errors
+  document.getElementById("errors").innerText = "0";
+
+  // Put cursor back in typing box
+  input.focus();
+}
+
+</script>
+
+</body>
+</html>
