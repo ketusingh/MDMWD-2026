@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>College Help Portal</title>
+
+  <style>
+    body {
+      font-family: Arial;
+      background: #f2f2f2;
+      padding: 30px;
+    }
+
+    .faq {
+      max-width: 600px;
+      margin: auto;
+    }
+
+    .question {
+      background: #333;
+      color: white;
+      padding: 15px;
+      margin-top: 5px;
+      cursor: pointer;
+    }
+
+    .answer {
+      display: none;
+      background: white;
+      padding: 15px;
+    }
+
+    .answer.active {
+      display: block;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="faq">
+    <h2>College Department Help Portal</h2>
+
+    <div class="question">What are the college working hours?</div>
+    <div class="answer">The department working hours are from 9:00 AM to 5:00 PM.</div>
+
+    <div class="question">How can I contact the department?</div>
+    <div class="answer">You can contact the department office or your faculty member.</div>
+
+    <div class="question">Where can I check the class timetable?</div>
+    <div class="answer">The class timetable is available on the department notice board.</div>
+
+    <div class="question">How can I check my exam schedule?</div>
+    <div class="answer">You can check the examination notice issued by the college.</div>
+
+    <div class="question">Where can I find study materials?</div>
+    <div class="answer">Study materials can be obtained from your faculty or department portal.</div>
+
+    <div class="question">Where can I check assignment details?</div>
+    <div class="answer">Assignment details are provided by the respective faculty.</div>
+
+  </div>
+
+  <script>
+    let questions = document.querySelectorAll(".question");
+
+    questions.forEach(function(question) {
+      question.addEventListener("click", function() {
+        let answer = question.nextElementSibling;
+        answer.classList.toggle("active");
+      });
+    });
+  </script>
+
+</body>
+</html>
