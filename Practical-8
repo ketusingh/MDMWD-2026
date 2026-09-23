@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Registration Form</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background: #f2f2f2;
+            padding: 30px;
+        }
+
+        .form-box {
+            width: 400px;
+            margin: auto;
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px gray;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        label {
+            display: block;
+            margin-top: 12px;
+        }
+
+        input {
+            width: 100%;
+            padding: 9px;
+            margin-top: 5px;
+            box-sizing: border-box;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 20px;
+            background: green;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        .error {
+            color: red;
+            font-size: 13px;
+        }
+
+        .success {
+            color: green;
+            text-align: center;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="form-box">
+
+    <h2>Student Registration</h2>
+
+    <form id="registrationForm">
+
+        <label>Full Name</label>
+        <input type="text" id="name">
+        <span class="error" id="nameError"></span>
+
+        <label>Email</label>
+        <input type="text" id="email">
+        <span class="error" id="emailError"></span>
+
+        <label>Password</label>
+        <input type="password" id="password">
+        <span class="error" id="passwordError"></span>
+
+        <label>Mobile Number</label>
+        <input type="text" id="mobile">
+        <span class="error" id="mobileError"></span>
+
+        <button type="submit">Register</button>
+
+        <div class="success" id="success"></div>
+
+    </form>
+</div>
+
+<script>
+
+document.getElementById("registrationForm").addEventListener("submit", function(event) {
+
+    event.preventDefault();
+
+    let name = document.getElementById("name").value.trim();
+    let email = document.getElementById("email").value.trim();
+    let password = document.getElementById("password").value;
+    let mobile = document.getElementById("mobile").value.trim();
+
+    let valid = true;
+
+    // Clear previous messages
+    document.getElementById("nameError").textContent = "";
+    document.getElementById("emailError").textContent = "";
+    document.getElementById("passwordError").textContent = "";
+    document.getElementById("mobileError").textContent = "";
+    document.getElementById("success").textContent = "";
+
+    // Name validation
+    if (name === "") {
+        document.getElementById("nameError").textContent =
+            "Name is required";
+        valid = false;
+    }
+
+    // Email validation
+    let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (email === "") {
+        document.getElementById("emailError").textContent =
+            "Email is required";
+        valid = false;
+    }
+    else if (!emailPattern.test(email)) {
+        document.getElementById("emailError").textContent =
+            "Enter a valid email";
+        valid = false;
+    }
+
+    // Password validation
+    if (password === "") {
+        document.getElementById("passwordError").textContent =
+            "Password is required";
+        valid = false;
+    }
+    else if (password.length < 6) {
+        document.getElementById("passwordError").textContent =
+            "Password must be at least 6 characters";
+        valid = false;
+    }
+
+    // Mobile validation
+    let mobilePattern = /^[0-9]{10}$/;
+
+    if (mobile === "") {
+        document.getElementById("mobileError").textContent =
+            "Mobile number is required";
+        valid = false;
+    }
+    else if (!mobilePattern.test(mobile)) {
+        document.getElementById("mobileError").textContent =
+            "Enter a valid 10-digit mobile number";
+        valid = false;
+    }
+
+    // Success message
+    if (valid) {
+        document.getElementById("success").textContent =
+            "Registration successful!";
+    }
+
+});
+
+</script>
+
+</body>
+</html>
